@@ -15,6 +15,11 @@
     box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+	color: @gray-dark;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -61,7 +66,11 @@ body:after {
 	width: 1200px;
 	margin: auto;
 }
-
+.transition(@trns: .2s) {
+	-webkit-transition: @trns;
+	-moz-transition: @trns;
+	transition: @trns;
+}
 
 header {
 	width: 100%;
@@ -75,7 +84,6 @@ header {
 	height: 100px;
 	overflow: visible;
 	position: relative;
-	font-size: 0;
 	&__logo {
 		font-size: 18px;
 		font-weight: 300;
@@ -87,17 +95,72 @@ header {
 		height: 100px;
 		padding: 30px 0;
 		position: absolute;
+		letter-spacing: 0;
 		left: -50px;
 	}
 	&__menu {
 		display: inline-block;
 		overflow: hidden;
+		padding: 0 0 0 215px;
 		& li {
 			display: inline-block;
-			font-size: 14px;
-			font-weight: 300;
-			color: 
+			& a {
+				display: block;
+				line-height: 100px;
+				color: @gray-light;
+				font-size: 14px;
+				text-transform: uppercase;
+				line-height: 100px;
+				text-decoration: none;
+				letter-spacing: 2px;
+				padding: 0 20px;
+				.transition();
+				&:hover {
+					color: @gray-dark;
+				}
+			}
 		}
 	}
-
+	&__block {
+		float: right;
+		overflow: hidden;
+		height: 100px;
+		padding: 20px 0;
+	}
+}
+.login {
+	float: left;
+	overflow: hidden;
+	&__enter {
+		display: block;
+		color: @gray-light;
+		text-decoration: none;
+		font-size: 14px;
+		letter-spacing: 2px;
+		line-height: 60px;
+		margin: 0 60px 0 0;
+		.transition();
+		&:hover {
+			color: @gray-dark;
+		}
+	}
+}
+.purchases {
+	float: right;
+	overflow: hidden;
+	&__link {
+		display: block;
+		color: @gray-light;
+		text-decoration: none;
+		font-size: 14px;
+		letter-spacing: 2px;
+		line-height: 60px;
+		padding: 0 0 0 30px;
+		background: url('../images/cart_icon.svg') left 14px no-repeat;
+		background-size: 20px 25px;
+		.transition();
+		&:hover {
+			color: @gray-dark;
+		}
+	}
 }

@@ -139,6 +139,10 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+  color: #808080;
+}
 html,
 body {
   margin: 0;
@@ -205,7 +209,6 @@ header {
   height: 100px;
   overflow: visible;
   position: relative;
-  font-size: 0;
 }
 .header__logo {
   font-size: 18px;
@@ -218,9 +221,76 @@ header {
   height: 100px;
   padding: 30px 0;
   position: absolute;
+  letter-spacing: 0;
   left: -50px;
 }
 .header__menu {
   display: inline-block;
   overflow: hidden;
+  padding: 0 0 0 215px;
+}
+.header__menu li {
+  display: inline-block;
+}
+.header__menu li a {
+  display: block;
+  color: #999999;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 100px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+.header__menu li a:hover {
+  color: #808080;
+}
+.header__block {
+  float: right;
+  overflow: hidden;
+  height: 100px;
+  padding: 20px 0;
+}
+.login {
+  float: left;
+  overflow: hidden;
+}
+.login__enter {
+  display: block;
+  color: #999999;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 60px;
+  margin: 0 60px 0 0;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+.login__enter:hover {
+  color: #808080;
+}
+.purchases {
+  float: right;
+  overflow: hidden;
+}
+.purchases__link {
+  display: block;
+  color: #999999;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 60px;
+  padding: 0 0 0 30px;
+  background: url('../images/cart_icon.svg') left 14px no-repeat;
+  background-size: 20px 25px;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+.purchases__link:hover {
+  color: #808080;
 }

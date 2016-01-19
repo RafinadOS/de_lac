@@ -47,7 +47,7 @@ gulp.task('img', function() {
 
 // move images for conten
 gulp.task('img2', function() {
-   return gulp.src([	'images/*.jpg','images/*.png',])
+   return gulp.src([	'images/*.jpg','images/*.png', 'images/*.svg'])
    .pipe(gulp.dest('app/images/'))
    .pipe(connect.reload())
 });
