@@ -147,7 +147,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: #ccc;
   font-family: 'Circe-fnt';
   font-size: 14px;
   letter-spacing: 1px;
@@ -205,6 +205,7 @@ header {
   display: block;
   overflow: hidden;
   width: 1200px;
+  padding: 0 15px;
   margin: auto;
   height: 100px;
   overflow: visible;
@@ -227,7 +228,7 @@ header {
 .header__menu {
   display: inline-block;
   overflow: hidden;
-  padding: 0 0 0 215px;
+  padding: 0 0 0 200px;
 }
 .header__menu li {
   display: inline-block;
@@ -293,4 +294,72 @@ header {
 }
 .purchases__link:hover {
   color: #808080;
+}
+footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  roght: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 99;
+}
+.footer {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  width: 1200px;
+  padding: 0 15px;
+  margin: auto;
+  height: 200px;
+}
+.footer__contacts {
+  float: left;
+  overflow: hidden;
+  width: 200px;
+  padding: 0 30px 0 0;
+}
+.footer__contacts-title {
+  display: block;
+  overflow: hidden;
+  font-size: 10px;
+  color: #cacaca;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 34px;
+}
+.footer__menu {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  list-style: none;
+}
+.footer__menu li {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  font-size: 10px;
+  color: #999999;
+  line-height: 34px;
+}
+.footer__menu li a {
+  display: block;
+  color: #999999;
+  line-height: 34px;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+.footer__menu li a:hover {
+  color: #808080;
+}
+.footer__menu li a.twitter {
+  display: inline-block;
+  width: 16px;
+  height: 11px;
+  opacity: .7;
+  background: url('../images/twitter.svg') 0 0 no-repeat;
+}
+.footer__menu li a.twitter:hover {
+  opacity: 1;
 }

@@ -23,7 +23,7 @@ a {
 html, body {
 	margin: 0;
 	padding: 0;
-	background: #fff;
+	background: #ccc;
 	font-family: 'Circe-fnt';
 	font-size: 14px;
 	letter-spacing: 1px;
@@ -64,6 +64,7 @@ body:after {
 	display: block;
 	overflow: hidden;
 	width: 1200px;
+	padding: 0 15px;
 	margin: auto;
 }
 .transition(@trns: .2s) {
@@ -101,7 +102,7 @@ header {
 	&__menu {
 		display: inline-block;
 		overflow: hidden;
-		padding: 0 0 0 215px;
+		padding: 0 0 0 200px;
 		& li {
 			display: inline-block;
 			& a {
@@ -116,7 +117,7 @@ header {
 				padding: 0 20px;
 				.transition();
 				&:hover {
-					color: @gray-dark;
+					color: @gray-dark; 
 				}
 			}
 		}
@@ -161,6 +162,81 @@ header {
 		.transition();
 		&:hover {
 			color: @gray-dark;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	roght: 0;
+	bottom: 0;
+	background: #fff;
+	z-index: 99;
+}
+.footer {
+	.wrapper();
+	height: 200px;
+	&__contacts {
+		float: left;
+		overflow: hidden;
+		width: 200px;
+		padding: 0 30px 0 0;
+		&-title {
+			display: block;
+			overflow: hidden;
+			font-size: 10px;
+			color: @gray;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			line-height: 34px;
+		}
+	}
+	&__menu {
+		clear: both;
+		display: block;
+		overflow: hidden;
+		list-style: none;
+		& li {
+			clear: both;
+			display: block;
+			overflow: hidden;
+			font-size: 10px;
+			color: @gray-light;
+			line-height: 34px;
+			& a {
+				display: block;
+				color: @gray-light;
+				line-height: 34px;
+				.transition();
+				&:hover {
+					color: @gray-dark;
+				}
+				&.twitter {
+					display: inline-block;
+					width: 16px;
+					height: 11px;
+					opacity: .7;
+					background: url('../images/twitter.svg') 0 0 no-repeat;
+					&:hover {
+						opacity: 1;
+					}
+				
+				}
+			}
 		}
 	}
 }
