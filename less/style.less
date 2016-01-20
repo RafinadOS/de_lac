@@ -23,7 +23,7 @@ a {
 html, body {
 	margin: 0;
 	padding: 0;
-	background: #ccc;
+	background: #fff;
 	font-family: 'Circe-fnt';
 	font-size: 14px;
 	letter-spacing: 1px;
@@ -46,7 +46,7 @@ body:before {
 }
 body:after {
 	content: '';
-	height: 150px;
+	height: 300px;
 	position: absolute;
 	width: 100%;
 	bottom: 0;
@@ -72,7 +72,11 @@ body:after {
 	-moz-transition: @trns;
 	transition: @trns;
 }
-
+.radius(@rds: 100px) {
+	-webkit-border-radius: @rds;
+	-moz-border-radius: @rds;
+	border-radius: @rds;
+}
 header {
 	width: 100%;
 	height: 100px;
@@ -182,10 +186,57 @@ footer {
 	position: fixed;
 	width: 100%;
 	left: 0;
-	roght: 0;
-	bottom: 0;
+	right: 0;
+	bottom: -161px;
 	background: #fff;
+	.transition(.4s);
 	z-index: 99;
+	& .footer-open {
+		display: block;
+		width: 23px;
+		height: 8px;
+		position: absolute;
+		top: 16px;
+		right: 10px;
+		z-index: 99;
+		&:before {
+			content: '';
+			width: 14px;
+			height: 1px;
+			background: @gray;
+			position: absolute;
+			display: block;
+			transform: rotate(45deg);
+			left: 0;
+			top: 3px;
+			.radius();
+			.transition(.6s);
+		}
+		&:after {
+			content: '';
+			width: 14px;
+			height: 1px;
+			background: @gray;
+			position: absolute;
+			display: block;
+			transform: rotate(-45deg);
+			right: 0;
+			top: 3px;
+			.radius();
+			.transition(.6s);
+		}
+	}
+}
+footer.show {
+	bottom: 0;
+	& .footer-open {
+		&:before {
+			transform: rotate(315deg);
+		}
+		&:after {
+			transform: rotate(-315deg);
+		}
+	}
 }
 .footer {
 	.wrapper();
@@ -194,8 +245,6 @@ footer {
 	&__info {
 		float: left;
 		overflow: hidden;
-
-
 		&-title {
 			display: block;
 			overflow: hidden;
@@ -205,7 +254,41 @@ footer {
 			letter-spacing: 2px;
 			line-height: 34px;
 		}
-
+	}
+	&__language {
+		float: right;
+		overflow: hidden;
+		&-title {
+			display: block;
+			overflow: hidden;
+			height: 34px;
+			background-size: 19px 19px;
+			background: url('../images/language-select_icon.svg') right 4px no-repeat;
+		}
+		&-select {
+			list-style: none;
+			display: block;
+			overflow: hidden;
+			& li {
+				clear: both;
+				display: block;
+				overflow: hidden;
+				font-size: 10px;
+				color: @gray-light;
+				line-height: 34px;
+				text-transform: uppercase;
+				& a {
+					color: @gray;
+					.transition();
+					&.active {
+						color: @gray-light;
+					}
+					&:hover {
+						color: @gray-dark;
+					}
+				}
+			}
+		}
 	}
 	&__contacts {
 		float: left;

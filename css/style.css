@@ -147,7 +147,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #ccc;
+  background: #fff;
   font-family: 'Circe-fnt';
   font-size: 14px;
   letter-spacing: 1px;
@@ -175,7 +175,7 @@ body:before {
 }
 body:after {
   content: '';
-  height: 150px;
+  height: 300px;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -299,10 +299,65 @@ footer {
   position: fixed;
   width: 100%;
   left: 0;
-  roght: 0;
-  bottom: 0;
+  right: 0;
+  bottom: -161px;
   background: #fff;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
   z-index: 99;
+}
+footer .footer-open {
+  display: block;
+  width: 23px;
+  height: 8px;
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  z-index: 99;
+}
+footer .footer-open:before {
+  content: '';
+  width: 14px;
+  height: 1px;
+  background: #cacaca;
+  position: absolute;
+  display: block;
+  transform: rotate(45deg);
+  left: 0;
+  top: 3px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  transition: 0.6s;
+}
+footer .footer-open:after {
+  content: '';
+  width: 14px;
+  height: 1px;
+  background: #cacaca;
+  position: absolute;
+  display: block;
+  transform: rotate(-45deg);
+  right: 0;
+  top: 3px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  transition: 0.6s;
+}
+footer.show {
+  bottom: 0;
+}
+footer.show .footer-open:before {
+  transform: rotate(315deg);
+}
+footer.show .footer-open:after {
+  transform: rotate(-315deg);
 }
 .footer {
   clear: both;
@@ -326,6 +381,43 @@ footer {
   text-transform: uppercase;
   letter-spacing: 2px;
   line-height: 34px;
+}
+.footer__language {
+  float: right;
+  overflow: hidden;
+}
+.footer__language-title {
+  display: block;
+  overflow: hidden;
+  height: 34px;
+  background-size: 19px 19px;
+  background: url('../images/language-select_icon.svg') right 4px no-repeat;
+}
+.footer__language-select {
+  list-style: none;
+  display: block;
+  overflow: hidden;
+}
+.footer__language-select li {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  font-size: 10px;
+  color: #999999;
+  line-height: 34px;
+  text-transform: uppercase;
+}
+.footer__language-select li a {
+  color: #cacaca;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+.footer__language-select li a.active {
+  color: #999999;
+}
+.footer__language-select li a:hover {
+  color: #808080;
 }
 .footer__contacts {
   float: left;
