@@ -77,6 +77,11 @@ body:after {
 	-moz-border-radius: @rds;
 	border-radius: @rds;
 }
+.shadow(@shdw: 0 0 10px rgba(0,0,0,.1);) {
+	-webkit-box-shadow: @shdw;
+	-moz-box-shadow: @shdw;
+	box-shadow: @shdw;
+}
 header {
 	width: 100%;
 	height: 100px;
@@ -125,10 +130,9 @@ header {
 				}
 			}
 		}
-	}
+	} 
 	&__block {
 		float: right;
-		overflow: hidden;
 		height: 100px;
 		padding: 20px 0;
 	}
@@ -152,7 +156,6 @@ header {
 }
 .purchases {
 	float: right;
-	overflow: hidden;
 	&__link {
 		display: block;
 		color: @gray-light;
@@ -169,14 +172,16 @@ header {
 		}
 	}
 }
-
-
-
-
-
-
-
-
+.cart-popup {
+	position: absolute;
+	top: 50px;
+	left: 100px;
+	width: 385px;
+	height: 550px;
+	background: #fff;
+	z-index: 999;
+	.shadow();
+}
 
 
 
@@ -189,8 +194,8 @@ footer {
 	right: 0;
 	bottom: -161px;
 	background: #fff;
-	.transition(.4s);
 	z-index: 99;
+	.transition(.4s);
 	& .footer-open {
 		display: block;
 		width: 23px;

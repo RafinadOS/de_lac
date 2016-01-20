@@ -251,7 +251,6 @@ header {
 }
 .header__block {
   float: right;
-  overflow: hidden;
   height: 100px;
   padding: 20px 0;
 }
@@ -276,7 +275,6 @@ header {
 }
 .purchases {
   float: right;
-  overflow: hidden;
 }
 .purchases__link {
   display: block;
@@ -295,6 +293,18 @@ header {
 .purchases__link:hover {
   color: #808080;
 }
+.cart-popup {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 385px;
+  height: 550px;
+  background: #fff;
+  z-index: 999;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 footer {
   position: fixed;
   width: 100%;
@@ -302,10 +312,10 @@ footer {
   right: 0;
   bottom: -161px;
   background: #fff;
+  z-index: 99;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
   transition: 0.4s;
-  z-index: 99;
 }
 footer .footer-open {
   display: block;
