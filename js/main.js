@@ -1,6 +1,11 @@
 $(document).ready(function($) {
-	$('.footer-open').click(function(e) {
+	$('.open').click(function(e) {
 		$('footer').toggleClass('show');
+		$('.overlay').toggleClass('overlay-show');
 		return false
+	});
+	$('.overlay').click(function(event) {
+		$(this).toggleClass('overlay-show');
+		$('footer').toggleClass('show');
 	});
 });
