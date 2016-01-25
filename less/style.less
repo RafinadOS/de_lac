@@ -157,6 +157,7 @@ header {
 }
 .purchases {
 	float: right;
+	position: relative;
 	&__link {
 		display: block;
 		color: @gray-light;
@@ -188,15 +189,22 @@ header {
 }
 .cart-popup {
 	position: absolute;
-	top: 50px;
-	left: 100px;
+	top: -20px;
+	right: 0;
 	width: 385px;
-	height: 550px;
+	height: 0;
+	overflow: hidden;
 	background: #fff;
 	border: 1px solid @gray-border;
 	padding: 0 35px;
 	z-index: 999;
+	opacity: 0;
+	.transition(.5s);
 	.shadow();
+	&-show {
+		opacity: 1;
+		height: 550px;
+	}
 	&__header {
 		clear: both;
 		display: block;
@@ -208,8 +216,7 @@ header {
 			float: left;
 		}
 	}
-	&:before {
-		content: '';
+	&-close {
 		display: block;
 		width: 20px;
 		height: 20px;
@@ -246,6 +253,73 @@ header {
 	display: block;
 	height: 350px;
 	overflow: auto;
+	&__item {
+		clear: both;
+		display: block;
+		overflow: hidden;
+		padding-bottom: 9px;
+		&:last-child {
+			padding-bottom: 0;
+		}
+		&-img {
+			float: left;
+			width: 100px;
+			& img {
+				display: block;
+				margin: 0;
+				padding: 0;
+			}
+		}
+		&-info {
+			float: right;
+			width: 204px;
+			padding: 8px 0;
+		}
+	}
+	&__title {
+		clear: both;
+		display: block;
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: 300;
+		line-height: 16px;
+		padding-bottom: 6px;
+	}
+	&__total {
+		font-size: 10px;
+		line-height: 12px;
+		text-transform: uppercase;
+		font-weight: 300;
+		padding-bottom: 2px;
+		& span {
+			color: @gray-dark;
+		}
+	}
+	&__price {
+		font-size: 14px;
+		color: @green;
+		font-weight: 300;
+		letter-spacing: 2px;
+		padding-bottom: 10px;
+	}
+	&__delete {
+		clear: both;
+		display: block;
+		overflow: hidden;
+		width: 70px;
+		height: 20px;
+		border: 1px solid @gray-dark;
+		text-align: center;
+		line-height: 20px;
+		font-size: 10px;
+		.radius(7px);
+		.transition();
+		&:hover {
+			color: #fff;
+			background: @gray-dark;
+		}
+	}
 }
 
 

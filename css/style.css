@@ -275,6 +275,7 @@ header {
 }
 .purchases {
   float: right;
+  position: relative;
 }
 .purchases__link {
   display: block;
@@ -308,17 +309,26 @@ header {
 }
 .cart-popup {
   position: absolute;
-  top: 50px;
-  left: 100px;
+  top: -20px;
+  right: 0;
   width: 385px;
-  height: 550px;
+  height: 0;
+  overflow: hidden;
   background: #fff;
   border: 1px solid #e6e6e6;
   padding: 0 35px;
   z-index: 999;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.cart-popup-show {
+  opacity: 1;
+  height: 550px;
 }
 .cart-popup__header {
   clear: both;
@@ -331,8 +341,7 @@ header {
 .cart-popup__header .purchases {
   float: left;
 }
-.cart-popup:before {
-  content: '';
+.cart-popup-close {
   display: block;
   width: 20px;
   height: 20px;
@@ -370,6 +379,77 @@ header {
   display: block;
   height: 350px;
   overflow: auto;
+}
+.ship-list__item {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  padding-bottom: 9px;
+}
+.ship-list__item:last-child {
+  padding-bottom: 0;
+}
+.ship-list__item-img {
+  float: left;
+  width: 100px;
+}
+.ship-list__item-img img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.ship-list__item-info {
+  float: right;
+  width: 204px;
+  padding: 8px 0;
+}
+.ship-list__title {
+  clear: both;
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  line-height: 16px;
+  padding-bottom: 6px;
+}
+.ship-list__total {
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding-bottom: 2px;
+}
+.ship-list__total span {
+  color: #808080;
+}
+.ship-list__price {
+  font-size: 14px;
+  color: #89C5C3;
+  font-weight: 300;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+}
+.ship-list__delete {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  width: 70px;
+  height: 20px;
+  border: 1px solid #808080;
+  text-align: center;
+  line-height: 20px;
+  font-size: 10px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+.ship-list__delete:hover {
+  color: #fff;
+  background: #808080;
 }
 footer {
   position: fixed;
