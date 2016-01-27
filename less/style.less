@@ -30,6 +30,7 @@ html, body {
 	font-size: 14px;
 	letter-spacing: 1px;
 	color: @text-color;
+	position: relative;
 }
 body:before {
 	content: '';
@@ -68,6 +69,11 @@ body:after {
 	width: 1200px;
 	padding: 0 15px;
 	margin: auto;
+}
+.clear() {
+	clear: both;
+	display: block;
+	overflow: hidden;
 }
 .transition(@trns: .2s) {
 	-webkit-transition: @trns;
@@ -386,7 +392,83 @@ header {
 	}
 	&__right {
 		float: right;
-		width: 1170px;
+		width: 900px;
+	}
+}
+.catalog {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	font-size: 0;
+	padding: 0 0 70px 0;
+	margin: -15px 0 0 0;
+	&__item {
+		display: inline-block;
+		width: 300px;
+		padding: 15px;
+		font-size: 14px;
+		font-weight: 300;
+		&-img {
+			.clear();
+		}
+		&-info {
+			.clear();
+			&-left {
+				float: left;
+				width: 200px;
+				padding: 8px;
+			}
+			&-right{
+				float: right;
+				width: 70px;
+				padding: 20px 8px 0 0;
+			}
+		}
+	}
+}
+.product {
+	&-collection {
+		font-size: 10px;
+		color: @gray-lighter;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+	&-title {
+		font-size: 14px;
+		text-transform: uppercase;
+		line-height: 24px;
+		letter-spacing: 3px;
+		color: @gray-dark;
+		font-weight: 400;
+	}
+	&-price {
+		color: @green;
+		letter-spacing: 2px;
+		font-size: 13px;
+	}
+}
+.color {
+	.clear();
+	list-style: none;
+	font-size: 0;
+	& li {
+		display: inline-block;
+		width: 13px;
+		height: 13px;
+		margin: 0 0 3px 3px;
+		.radius(4px);
+	}
+	&-1 {
+		background: #edece9;
+	}
+	&-2 {
+		background: #89c5c3;
+	}
+	&-3 {
+		background: #eae3b5;
+	}
+	&-4 {
+		border: 2px solid #edece9;
 	}
 }
 .filter {
@@ -395,6 +477,7 @@ header {
 	overflow: hidden;
 	&__item {
 		margin: 0 0 35px 0;
+		font-size: 0;
 		&-title {
 			clear: both;
 			display: block;
@@ -414,6 +497,10 @@ header {
 			padding: 0 0 0 15px;
 			position: relative;
 			margin: 0 0 3px 0;
+		}
+		&-inline {
+			display: inline-block;
+			margin: 0 5px 5px 0;
 		}
 	}
 }
@@ -450,11 +537,41 @@ input.chck-round[type="checkbox"] + label {
 		.transition();
 	}
 }
+
+
+input.chck-size[type="checkbox"] {
+	display: none;
+	&:checked + label {
+		width: 31px;
+		height: 31px;
+		color: @gray-dark;
+		border: 1px solid @gray-dark;
+		color: @gray-dark;
+	}
+}
+input.chck-size[type="checkbox"] + label {
+	display: block;
+	width: 31px;
+	height: 31px;
+	font-size: 10px;
+	line-height: 31px;
+	text-align: center;
+	border: 1px solid @gray-lighter;
+	text-transform: uppercase;
+	color: @gray-lighter;
+	cursor: pointer;
+	letter-spacing: 2px;
+	font-weight: 400;
+	.radius(10px);
+	.transition();
+}
+
+
 footer {
 	position: fixed;
 	width: 100%;
 	left: 0;
-	right: 0;
+	right: 0; 
 	bottom: -161px;
 	background: #fff;
 	z-index: 999;

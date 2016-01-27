@@ -152,6 +152,7 @@ body {
   font-size: 14px;
   letter-spacing: 1px;
   color: #b3b3b3;
+  position: relative;
 }
 body:before {
   content: '';
@@ -523,7 +524,89 @@ header {
 }
 .content__right {
   float: right;
-  width: 1170px;
+  width: 900px;
+}
+.catalog {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  padding: 0 0 70px 0;
+  margin: -15px 0 0 0;
+}
+.catalog__item {
+  display: inline-block;
+  width: 300px;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.catalog__item-img {
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.catalog__item-info {
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.catalog__item-info-left {
+  float: left;
+  width: 200px;
+  padding: 8px;
+}
+.catalog__item-info-right {
+  float: right;
+  width: 70px;
+  padding: 20px 8px 0 0;
+}
+.product-collection {
+  font-size: 10px;
+  color: #cccccc;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.product-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 24px;
+  letter-spacing: 3px;
+  color: #808080;
+  font-weight: 400;
+}
+.product-price {
+  color: #89C5C3;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+.color {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  list-style: none;
+  font-size: 0;
+}
+.color li {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 0 3px 3px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.color-1 {
+  background: #edece9;
+}
+.color-2 {
+  background: #89c5c3;
+}
+.color-3 {
+  background: #eae3b5;
+}
+.color-4 {
+  border: 2px solid #edece9;
 }
 .filter {
   clear: both;
@@ -532,6 +615,7 @@ header {
 }
 .filter__item {
   margin: 0 0 35px 0;
+  font-size: 0;
   clear: both;
   display: block;
   overflow: hidden;
@@ -552,6 +636,10 @@ header {
   padding: 0 0 0 15px;
   position: relative;
   margin: 0 0 3px 0;
+}
+.filter__item-inline {
+  display: inline-block;
+  margin: 0 5px 5px 0;
 }
 input.chck-round[type="checkbox"] {
   display: none;
@@ -588,6 +676,35 @@ input.chck-round[type="checkbox"] + label:before {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+input.chck-size[type="checkbox"] {
+  display: none;
+}
+input.chck-size[type="checkbox"]:checked + label {
+  width: 31px;
+  height: 31px;
+  border: 1px solid #808080;
+  color: #808080;
+}
+input.chck-size[type="checkbox"] + label {
+  display: block;
+  width: 31px;
+  height: 31px;
+  font-size: 10px;
+  line-height: 31px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  text-transform: uppercase;
+  color: #cccccc;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-weight: 400;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   transition: 0.2s;
