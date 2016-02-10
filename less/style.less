@@ -65,6 +65,11 @@ body:after {
 	background: linear-gradient(to bottom,  #ffffff 0%,#f4f4f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
 }
+body.header__menu-vissible,
+body.cart-popup-show {
+	overflow: hidden;
+	height: 100vh;
+}
 .wrapper() {
 	clear: both;
 	display: block;
@@ -932,7 +937,10 @@ footer.show {
 		}
 	}
 }
-@media(max-width: 598px) {
+@media(max-width: 780px) {
+
+}
+@media(max-width: 780px) {
 	.filter {
 		text-align:center;
 		&__item {

@@ -196,6 +196,11 @@ body:after {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f4f4f4', GradientType=0);
   /* IE6-9 */
 }
+body.header__menu-vissible,
+body.cart-popup-show {
+  overflow: hidden;
+  height: 100vh;
+}
 header {
   width: 100%;
   height: 100px;
@@ -1103,7 +1108,7 @@ footer.show .footer-open:after {
     padding: 0;
   }
 }
-@media (max-width: 598px) {
+@media (max-width: 780px) {
   .filter {
     text-align: center;
   }

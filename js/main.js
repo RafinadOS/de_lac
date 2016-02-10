@@ -45,8 +45,6 @@ $(document).ready(function($) {
 	var cartw 		= $('.cart-popup').width();
 	var scrollw 	= cartw - 70;
 
-
-
 	// условия для всплывающей корзины
 	if (winh <= '570') {
 		$(function(){
@@ -64,11 +62,4 @@ $(document).ready(function($) {
 			$('.content__right').width(realcontw);
 		});
 	};
-
-
-
 });
-
-
-
-
