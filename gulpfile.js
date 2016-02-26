@@ -17,6 +17,7 @@ gulp.task('connect', function() {
 gulp.task('concat-css', function () {
    return gulp.src('css/*.css')
    .pipe(concatCss("style.css"))
+   .pipe(gulp.dest('C:/WebServers/home/open.ru/www/catalog/view/theme/de_laconisme/stylesheet'))
    .pipe(gulp.dest('app/css'))
    .pipe(connect.reload());
 });
@@ -48,6 +49,7 @@ gulp.task('img', function() {
 // move images for conten
 gulp.task('img2', function() {
    return gulp.src([	'images/*.jpg','images/*.png', 'images/*.svg'])
+   .pipe(gulp.dest('C:/WebServers/home/open.ru/www/catalog/view/theme/de_laconisme/images'))
    .pipe(gulp.dest('app/images/'))
    .pipe(connect.reload())
 });
@@ -62,6 +64,7 @@ gulp.task('favicon', function() {
 // concat .js files
 gulp.task('js', function() {
    return gulp.src('js/*.js')
+   .pipe(gulp.dest('C:/WebServers/home/open.ru/www/catalog/view/javascript'))
    .pipe(gulp.dest('app/js/'))
    .pipe(connect.reload())
 });
@@ -69,6 +72,7 @@ gulp.task('js', function() {
 // move fonts
 gulp.task('fonts', function() {
    return gulp.src([	'fonts/*.eot','fonts/*.woff','fonts/*.svg','fonts/*.ttf'])
+   .pipe(gulp.dest('C:/WebServers/home/open.ru/www/catalog/view/theme/de_laconisme/fonts'))
    .pipe(gulp.dest('app/fonts/'))
 });
 

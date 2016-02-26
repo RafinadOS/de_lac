@@ -15,6 +15,7 @@ $(document).ready(function($) {
 		$('body').toggleClass('cart-popup-show');
 		return false
 	});
+
 	$('.purchases__link').click(function() {
 		$('body').toggleClass('cart-popup-show');
 		return false
@@ -26,6 +27,9 @@ $(document).ready(function($) {
 		return false
 	});
 
+	$('.footer__language-select a').click(function(e){
+		return false;
+	})
 	// инициализация кастомного скрола
 	$('.ship-list').jScrollPane();
 
@@ -62,4 +66,5 @@ $(document).ready(function($) {
 			$('.content__right').width(realcontw);
 		});
 	};
+
 });
